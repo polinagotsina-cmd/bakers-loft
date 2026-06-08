@@ -1,0 +1,537 @@
+/* Подключаем шрифт CAPS для заголовоков */
+@font-face {
+    font-family: 'CapsFont';
+    src: url('fonts/CAPS.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Подключаем шрифт TRAVELS для обычного текста и меню */
+@font-face {
+    font-family: 'TravelsFont';
+    src: url('fonts/TRAVELS.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+
+/*ХЭДЭР */
+
+.header {
+    position: fixed;
+    z-index: 99;
+    background-color: white;
+}
+
+.header a {
+    font-family: 'CapsFont'; /* или твой шрифт меню */
+    
+    /* Формула: 16px / 1200 * 100 = 1.33vw */
+    font-size: 1.33vw; 
+    
+    text-decoration: none;
+    color: #342008;
+}
+
+.header_nav {
+    display: flex;
+    /* Например, если в макете было 40px: 40 / 1200 * 100 = ~3.3vw */
+    gap: 3.3vw; 
+}
+
+.header{
+    padding-block: 0.8vw;
+    width: 100%;
+    color: white;
+}
+
+.all{
+    margin: auto;
+    max-width: 80vw;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.r_head {
+    display: flex;
+    gap: 7vw;
+}
+
+.header_ITEM {
+    font-family: 'CapsFont';
+    text-decoration: none;
+    font-size: 1.33vw;
+    color: #342008;
+}
+
+.orange {
+    font-family: 'CapsFont';
+    text-decoration: none;
+    font-size: 1.33vw;
+    color: #342008;
+
+    background-image: url(images/circle.svg);
+    display: inline-block;
+    padding: 1.6vw 2.6vw;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+
+
+
+/* ГЛАВНАЯ*/
+
+.all_home {
+    padding-top: 6vw;
+    display: flex;
+    /* Формула: 64px / 1200px * 100 = ~5.3vw */
+    gap: 5.3vw; 
+    width: 90vw;
+    margin: 0 0 auto; /* Добавим резиновый марджин вместо фиксированного */
+    
+    /* УДАЛИ строку padding-right: 100px; чтобы она не зажимала правую сторону */
+}
+
+.img_cruasan {
+    /* Формула: 496px / 1200px * 100 = 41.3vw */
+    width: 41.3vw;
+    height: auto;
+}
+
+.home_right {
+    display: flex;
+    flex-direction: column;
+    /* Формула: 540px / 1200px * 100 = 45vw */
+    width: 45vw; 
+    
+    /* УДАЛИ строку justify-content: space-between; чтобы контент сел аккуратной кучкой */
+    /* Задаем вместо неё резиновый отступ между заголовком, кнопками и нижним текстом */
+    gap: 3vw; 
+}
+
+.titel {
+    overflow: hidden;
+    font-family: 'CapsFont';
+    text-decoration: none;
+    
+    /* ВОТ СЮДА возвращаем размер шрифта (120px / 1200 * 100 = 10vw) */
+    font-size: 10vw; 
+    
+    /* А жирность делаем обычной (Normal) или убираем совсем, если шрифт сам по себе Caps */
+    font-weight: 400; 
+    
+    color: #342008;
+    line-height: 95%;
+    margin: 0;
+}
+
+.titel_up {
+    display: flex;
+    flex-direction: column;
+    /* Формула: 32px / 1200px * 100 = ~2.6vw */
+    gap: 2.6vw; 
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons_left a {
+    font-family: 'CapsFont';
+    text-decoration: none;
+    font-size: 1.33vw;
+    color: #342008;
+}
+
+.buttons_left {
+    display: flex;
+    gap: 2.5vw;
+    align-items: center;
+}
+
+.button {
+    border: 0.08vw solid #342008; 
+    padding: 1.33vw;
+}
+
+.img_arrow {
+    display: inline-block;
+    
+    /* Стрелочка теперь тоже идеально масштабируется! */
+    width: 4.16vw;
+    height: 4.16vw;
+}
+
+.regular_text {
+    font-family: 'TravelsFont';
+    text-decoration: none;
+    
+    /* Теперь и маленький текст будет резиновым! */
+    font-size: 1.33vw; 
+    
+    color: #342008;
+    line-height: 1.5; /* Оставляем пропорцию межстрочки */
+    font-weight: 400; /* Гарантируем, что он будет тонким и изящным */
+}
+
+
+
+
+/* О НАС */
+
+.about_us {
+    overflow: hidden;
+}
+
+.subtitel {
+    font-family: 'CapsFont';
+    text-decoration: none;
+    font-size: 1.33vw;
+    color: #342008;
+    font-weight: 400;
+}
+
+.up_us {
+    padding-top: 6vw;
+    display: flex;
+    margin-inline: 5vw;
+    margin-bottom: 5vw;
+}
+
+.left_us, .right_us { 
+    width: 45vw;    
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.about_us {
+    position: relative;
+}
+
+.text_us {
+    margin-inline: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.bun {
+    width: 40vw;
+    position: absolute;
+    right: -16vw;
+    bottom: 0;
+}
+
+.baguettes {
+    width: 14vw;
+    position: absolute;
+    right: 22vw;
+    bottom: 8vw;
+}
+
+
+
+
+/* МЕНЮ */
+
+.all_categories_menu {
+    scrollbar-width: none; 
+}
+.all_categories_menu::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.all_menu {
+    margin-inline:5vw;
+    padding-top: 10vw;
+    scrollbar-width: none; 
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.all_categories_menu {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3vw;
+    overflow-x: auto;
+}
+
+.menu_item {
+    border: none;
+    background: none;
+
+    padding: 1.6vw 2.6vw;
+    font-family: 'CapsFont';
+    text-decoration: none;
+    font-size: 1.33vw;
+    color: #342008;
+    font-weight: 400;
+
+    flex-shrink: 0;
+}
+
+.menu_item.active {
+    background-image: url(images/circa2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.with_padding {
+    padding-left: 4vw;
+}
+
+.category_content {
+    display: none;
+}
+
+.category_content.show {
+    display: flex;
+}
+
+.photos_of_food {
+    padding-left: 4vw;
+}
+
+.photo_food {
+    width: 18vw;
+}
+
+.menu_photo_item {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.down_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+}
+
+.menu_photos {
+    display: flex;
+    gap: 2vw;
+    overflow-x: auto
+}
+
+
+.menu_photos {
+    scrollbar-width: none; 
+}
+.menu_photos::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+/*МЕРОПРИЯТИЯ */
+
+.all_events {
+    padding-block: 10vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+}
+
+.titel_discr {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vw;
+}
+
+.bagel {
+    width: 18vw;
+    position: absolute;
+    left: -3vw;
+    top: -5vw;
+}
+
+.cinabon {
+    width: 15vw;
+    position: absolute;
+    right: -3vw;
+    top: 1vw;
+}
+
+.events_variabts {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2vw;
+}
+
+.active_text {
+    color: white;
+}
+
+.event {
+    padding: 1vw;
+    padding-block: 0.4VW;
+    border: #342008 solid 1px;
+}
+
+.active_event {
+    border: none;
+    padding-block: 3vw;
+    padding-inline: 4vw;
+    background-color: #EB8B40;
+}
+
+.events_sub {
+    text-align: center;
+}
+
+
+
+
+/*ОТЗЫВЫ */
+
+.rewives {
+    padding-bottom: 10vw;
+}
+
+.all_riv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 7vw;
+    margin: auto;
+    max-width: 80vw;
+}
+
+.titel_riv {
+    text-align: right;
+}
+
+.up_coment {
+    align-items: center;
+    display: flex;
+    gap: 1vw;
+}
+
+.avatar{
+    width: 3vw;
+    height: 3vw;
+}
+
+.coment {
+    border: #342008 1px solid;
+    padding: 2vw;
+    word-break: break-word;
+}
+
+.riw_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1vw; 
+}
+
+.cooki {
+    position: absolute;
+    width: 26vw;
+    left: -14vw;
+    top: -14vw;
+}
+
+.puff {
+    position: absolute;
+    size: 20vw;
+    bottom: -10vw;
+    left: -10vw;
+}
+
+.cake {
+    position: absolute;
+    size: 17vw;
+    bottom: -12vw;
+    right: -10vw;
+}
+
+.fffff {
+    height: 20vw;
+}
+
+
+
+
+/*ФУТОР */
+
+.contact {
+    padding-block: 5vw;
+}
+
+.all_contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10vw;
+    width: 70vw;
+    margin: 0 auto;
+
+    justify-items: start; /* Сдвигает элементы к левому краю внутри их ячеек */
+    text-align: left;
+}
+
+.link_basment {
+    font-family: 'CapsFont'; /* или твой шрифт меню */
+    
+    /* Формула: 16px / 1200 * 100 = 1.33vw */
+    font-size: 1.33vw; 
+    
+    text-decoration: underline;
+    color: #342008;
+}
+
+.link_conect {
+    display: inline-block;
+    font-family: 'CapsFont';
+    font-size: 1.33vw; 
+    color: #342008;
+    text-decoration: none;
+
+   border: #342008 1px solid; 
+   padding: 1vw;
+}
+
+.visit {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.links {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    
+}
+
+.conect, .open_hrs {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
