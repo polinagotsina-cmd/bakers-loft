@@ -1,7 +1,7 @@
 /* Подключаем шрифт CAPS для заголовоков */
 @font-face {
     font-family: 'CapsFont';
-    src: url('fonts/CAPS.woff2') format('woff2');
+    src: url('FONTS/CAPS.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 /* Подключаем шрифт TRAVELS для обычного текста и меню */
 @font-face {
     font-family: 'TravelsFont';
-    src: url('fonts/TRAVELS.woff2') format('woff2');
+    src: url('FONTS/TRAVELS.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
