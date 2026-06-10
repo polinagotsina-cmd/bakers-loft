@@ -84,3 +84,16 @@ buttons.forEach(button => {
         }
     });
 });
+
+
+// Находим все ссылки внутри нашего мобильного меню
+const menuLinks = document.querySelectorAll('.r_head a');
+// Находим наш скрытый чекбокс, который управляет шторкой
+const checkbox = document.querySelector('.bburger_checkbox');
+
+// Перебираем каждую ссылку и вешаем на неё событие клика
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        checkbox.checked = false; // Снимаем галочку, и меню тут же закрывается!
+    });
+});

@@ -63,9 +63,11 @@ html, body {
     align-items: center;
 }
 
-.r_head {
-    display: flex;
-    gap: 7vw;
+@media (min-width: 769px) {
+    .r_head {
+        display: flex;
+        gap: 7vw;
+    }
 }
 
 .header_ITEM {
@@ -189,7 +191,9 @@ html, body {
     font-weight: 400; /* Гарантируем, что он будет тонким и изящным */
 }
 
-
+.mobile_buttons {
+    display: none;
+}
 
 
 /* О НАС */
@@ -235,7 +239,7 @@ html, body {
     width: 40vw;
     position: absolute;
     right: -16vw;
-    bottom: 0;
+    bottom: -16VW;
 }
 
 .baguettes {
@@ -459,14 +463,14 @@ html, body {
 
 .puff {
     position: absolute;
-    size: 20vw;
+    width: 20vw;
     bottom: -10vw;
     left: -10vw;
 }
 
 .cake {
     position: absolute;
-    size: 17vw;
+    width: 17vw;
     bottom: -12vw;
     right: -10vw;
 }
@@ -534,4 +538,496 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 2vw;
+}
+
+
+
+
+
+.bburger_checkbox {
+    display: none;
+}
+
+label {
+    display: none;
+}
+
+
+
+
+
+/*МОБИЛКА */
+
+@media (max-width: 768px) {
+
+    /* --- BURGER MENU --- */
+    label {
+        display: flex;
+        width: 22px;
+        height: 16px;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        z-index: 99;
+    }
+    label span {
+        width: 100%;
+        height: 2px;
+        background-color: #342008;
+    }
+    .r_head {
+        z-index: 98;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 6vw;
+    }
+    .bburger_checkbox:checked ~ .r_head {
+        right: 0;
+    }
+    .header a {
+        font-size: 6vw;
+    }
+
+    /* --- HOME SECTION --- */
+    .all_home {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 16vw;
+        gap: 0;
+    }
+
+    /* 1. Title — top */
+    .titel {
+        font-size: 18vw;
+        padding: 4vw 5vw 3vw;
+        order: 1;
+        margin: 0;
+    }
+
+    /* 2. Image wrapper — position:relative so buttons can sit on top */
+    .home_left {
+        order: 2;
+        width: 100%;
+        position: relative;
+    }
+    .img_cruasan {
+        width: 100%;
+        height: 110vw; /* 460px on ~375px screen ≈ 122vw */
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Buttons overlaid on the photo, bottom-left */
+    .home_right {
+        display: contents;
+    }
+    .titel_up {
+        display: contents;
+    }
+    .buttons {
+        position: absolute;
+        bottom: 6vw;
+        left: 5vw;
+        z-index: 5;
+        order: unset;
+    }
+    .buttons_left {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        align-items: flex-start;
+    }
+    .buttons_left a {
+        font-size: 4vw;
+        padding: 2.5vw 4vw;
+        background-color: white; /* so text is readable over photo */
+    }
+    .button {
+        background-color: #EB8B40 !important;
+        color: white !important;
+        border: none !important;
+    }
+    .arrow {
+        display: none;
+    }
+
+    /* 3. Description — below the photo */
+    .text_down {
+        order: 3;
+        padding: 5vw;
+    }
+    .regular_text {
+        font-size: 3vw;
+    }
+
+     .about_us {
+        overflow: hidden;
+    }
+
+    .up_us {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10vw;
+        margin-inline: 5vw;
+        margin-bottom: 8vw;
+        gap: 12vw;
+        position: relative;
+    }
+
+    .left_us {
+        width: 100%;
+    }
+
+    /* Cinnabon overlaps the title — top right */
+    .right_us {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: vw;
+    }
+
+    /* Hide the cinnabon from its original spot in .right_us
+       and re-position it over the title via absolute */
+    .about_us .titel {
+        font-size: 18vw;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Bun image overlaps title top-right */
+    .bun {
+        width: 38vw;
+        position: absolute;
+        right: 2vw;
+        top: 20vw;
+        z-index: 3;
+        bottom: unset; /* override desktop */
+    }
+
+    /* Subtitle and text */
+    .subtitel {
+        font-size: 3.5vw;
+    }
+
+    /* Bottom part: text + baguettes */
+    .down_us {
+        margin-inline: 5vw;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        padding-bottom: 50vw; /* space for baguettes sticking out below */
+    }
+
+    .text_us {
+        display: none;
+    }
+
+    /* Baguettes at the bottom center */
+    .baguettes {
+    width: 32vw;
+    position: absolute;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%) rotate(15deg);
+    bottom: 20vw; 
+    }
+
+    .mobile_buttons {
+        display: flex;
+        position: absolute;
+        bottom: 6vw;
+        left: 5vw;
+        z-index: 6;
+    }
+
+    .desktop_buttons {
+        display: none;
+    }
+
+    /* --- MENU SECTION --- */
+.all_menu {
+    margin-inline: 0;
+}
+
+.titel.with_padding {
+    font-size: 18vw;
+    order: 1;
+}
+
+/* Categories stacked vertically, centered */
+.all_categories_menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    overflow-x: unset;
+    padding-block: 8vw;
+}
+
+.menu_item {
+    font-size: 4vw;
+    padding: 2vw 5vw;
+}
+
+.menu_item.active {
+    background-size: 100% 100%;
+}
+
+/* Food photos — bigger, horizontal scroll */
+.photos_of_food {
+    padding-left: 10vw;
+}
+
+.photo_food {
+    width: 80vw;
+    height: 80vw;
+    object-fit: cover;
+}
+
+.menu_photo_item {
+    gap: 2vw;
+}
+
+.menu_photo_item .regular_text {
+    font-size: 3vw;
+    text-align: center;
+}
+
+.menu_photos {
+    gap: 2vw;
+    padding-right: 10vw;
+}
+
+.down_menu {
+    gap: 12vw;
+}
+
+.all_menu .titel {
+    order: unset;
+    text-align: center;
+    padding-left: 0 !important;
+    font-size: 18vw;
+    width: 100%;
+    overflow: visible;
+}
+
+/* --- EVENTS SECTION --- */
+.all_events .titel {
+    order: unset;
+    text-align: center;
+    font-size: 18vw;
+    width: 100%;
+    overflow: visible;
+    padding: 0;
+}
+
+.titel_discr {
+    align-items: center;
+    text-align: center;
+    padding-inline: 5vw;
+}
+
+.subtitel {
+    font-size: 4vw;
+}
+
+.bagel {
+    width: 30vw;
+    position: absolute;
+    right: auto;
+    left: unset;
+    top: 2vw;
+}
+
+.cinabon {
+    width: 30vw;
+    position: static;
+    margin-top: 20vw;
+}
+
+/* Events stacked vertically */
+
+.event {
+    padding: 4vw 5vw;
+}
+
+.active_event {
+    padding: 8vw 8vw;  /* ← was 3vw top/bottom + 4vw sides, now equal */
+}
+
+.event h2, .event h3,
+.active_event h2, .active_event h3 {
+   margin: 0;
+}
+
+.events_variabts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.all_events {
+    position: relative;
+    display: flex;
+    gap: 12vw;
+}
+
+
+.bagel {
+    width: 35vw;
+    position: absolute;
+    right: auto;
+    bottom: -100vw;
+}
+
+.titel_discr {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30vw;
+}
+
+.bagel {
+    width:38vw;
+    position: absolute;
+    left: auto;
+    top: 10vw;
+}
+
+.cinabon {
+    width: 30vw;
+    position: absolute;
+    right: auto;
+    top: 180vw;
+}
+
+.events {
+    padding-bottom: 50vw;
+    padding-top: 20vw;
+}
+
+/* --- REVIEWS SECTION --- */
+.rewives {
+    padding-bottom: 40vw; /* space for cake at bottom */
+    overflow: hidden;
+}
+
+.all_riv {
+    max-width: 100%;
+    margin-inline: 5vw;
+    gap: 4vw;
+}
+
+.titel_riv {
+    text-align: center; /* ← left aligned like Figma */
+    font-size: 18vw;
+    order: 1;
+}
+
+.riw_grid {
+    position: relative;
+    grid-template-columns: 1fr; /* ← single column */
+    gap: 3vw;
+    order: 2;
+}
+
+.coment {
+    padding: 4vw;
+}
+
+.up_coment {
+    gap: 3vw;
+    margin-bottom: 2vw;
+}
+
+.avatar {
+    width: 8vw;
+    height: 8vw;
+}
+
+ /* decorative images */
+.cooki { display: none; }
+.puff  { display: none; }
+
+.cake {
+    position: absolute;
+    right: auto;
+    width: 55vw;
+    bottom: -38vw;
+    left: 50%;
+    transform: translateX(-50%);
+    right: unset;
+    z-index: 98;
+}
+
+.contact {
+    padding-block: 10vw;
+}
+
+.all_contact {
+    grid-template-columns: 1fr;  /* single column */
+    width: 90vw;
+    gap: 8vw;
+    text-align: center;
+    justify-items: center;
+}
+
+/* Reorder to match Figma: hours → connect → visit */
+.open_hrs { order: 1; }
+.conect   { order: 2; }
+.visit    { order: 3; }
+
+.subtitel {
+    font-size: 4vw;
+}
+
+.regular_text {
+    font-size: 3vw;
+}
+
+    /* Social links horizontal row */
+.links {
+    flex-direction: row;  /* ← horizontal */
+    gap: 1vw;
+}
+
+.link_conect {
+    font-size: 4vw;
+    padding: 2vw 3vw;
+}
+
+.link_basment {
+    font-size: 4vw;
+}
+
+.conect, .open_hrs, .visit {
+    align-items: center;
+    gap: 4vw;
+}
+
+.visit {
+    display: flex;
+    flex-direction: column;
+    gap: 0vw;
+}
+
+.open_hrs {
+    display: flex;
+    flex-direction: column;
+    gap: 0vw;
+}
+
 }
